@@ -1,0 +1,25 @@
+import sys
+import math
+
+# Auto-generated code below aims at helping you parse
+# the standard input according to the problem statement.
+
+n = int(input())  # the number of temperatures to analyse
+t = input()  # the n temperatures expressed as integers ranging from -273 to 5526
+result = ''
+
+if len(t) == 0:
+    print("0")
+else:
+    t_split = t.split()
+    result = t_split[0]
+    
+    for t in t_split:
+        if abs(int(t)) < abs(int(result)):
+            result = t
+        elif abs(int(t)) == abs(int(result)):
+            result = max(int(t),int(result))
+
+print(result)
+
+# learned: practiced loops, arrays, string methods, and type conversion
